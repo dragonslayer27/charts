@@ -3,9 +3,10 @@ entries:
   trino:
   - apiVersion: v2
     appVersion: "370"
-    created: "2022-02-17T22:41:55.431585005Z"
-    description: Fast distributed SQL query engine for big data analytics
-    digest: 9530239789034704cb9c8f91b335f8670d5e3fb97d505d84ccab4562883196ae
+    created: "2022-02-18T18:12:46.910477685Z"
+    description: Fast distributed SQL query engine for big data analytics that helps
+      you explore your data universe
+    digest: f6a3b18fb1251418cd5c24ee44202ad90e1964a364e7ec6148f21f120c49376c
     home: https://trino.io/
     icon: https://trino.io/assets/trino.png
     maintainers:
@@ -16,6 +17,6 @@ entries:
     - https://github.com/trinodb/trino/tree/master/core/docker
     type: application
     urls:
-    - https://github.com/habc12/charts/releases/download/trino-0.4.0/trino-0.4.0.tgz
+    - https://github.com/dragonslayer27/charts/releases/download/trino-0.4.0/trino-0.4.0.tgz
     version: 0.4.0
-generated: "2022-02-17T22:41:55.286265153Z"
+generated: "2022-02-18T18:12:46.910491585Z"
