@@ -21,23 +21,17 @@ The following table lists the configurable parameters of the Trino chart and the
 | `server.log.trino.level` |  | `"INFO"` |
 | `server.config.path` |  | `"/etc/trino"` |
 | `server.config.http.port` |  | `8080` |
-| `server.config.https.enabled` |  | `false` |
-| `server.config.https.port` |  | `8443` |
-| `server.config.https.keystore.path` |  | `""` |
 | `server.config.query.maxMemory` |  | `"4GB"` |
 | `server.config.query.maxMemoryPerNode` |  | `"1GB"` |
 | `server.config.memory.heapHeadroomPerNode` |  | `"1GB"` |
 | `server.exchangeManager.name` |  | `"filesystem"` |
 | `server.exchangeManager.baseDir` |  | `"/tmp/trino-local-file-system-exchange-manager"` |
-| `server.workerExtraConfig` |  | `""` |
-| `server.coordinatorExtraConfig` |  | `""` |
 | `server.jvm.maxHeapSize` |  | `"8G"` |
 | `server.jvm.gcMethod.type` |  | `"UseG1GC"` |
 | `server.jvm.gcMethod.g1.heapRegionSize` |  | `"32M"` |
 | `server.autoscaling.enabled` |  | `false` |
 | `server.autoscaling.maxReplicas` |  | `5` |
 | `server.autoscaling.targetCPUUtilizationPercentage` |  | `50` |
-| `accessControl` |  | `{}` |
 | `additionalNodeProperties` |  | `{}` |
 | `additionalJVMConfig` |  | `{}` |
 | `additionalConfigProperties` |  | `{}` |
@@ -57,7 +51,6 @@ The following table lists the configurable parameters of the Trino chart and the
 | `serviceAccount.create` |  | `false` |
 | `serviceAccount.name` |  | `""` |
 | `serviceAccount.annotations` |  | `{}` |
-| `secretMounts` |  | `[]` |
 
 
 
