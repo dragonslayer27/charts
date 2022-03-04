@@ -33,6 +33,16 @@ spec:
         - name: catalog-volume
           configMap:
             name: {{ template "trino.catalog" . }}
+        {{- if .Values.accessControl }}{{- if eq .Values.accessControl.type "configmap" }}
+        - name: access-control-volume
+          configMap:
+            name: trino-access-control-volume-coordinator
+        {{- end }}{{- end }}
+        {{- if .Values.accessControl }}{{- if eq .Values.accessControl.type "pvc" }}
+        - name: {{ .Values.accessControl.pvcVolumeName | default "access-control-pvc-volume" }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.accessControl.pvcName }}
+        {{- end }}{{- end }}
       imagePullSecrets:
         - name: registry-credentials
       containers:
@@ -46,6 +56,14 @@ spec:
               name: config-volume
             - mountPath: {{ .Values.server.config.path }}/catalog
               name: catalog-volume
+            {{- if .Values.accessControl }}{{- if eq .Values.accessControl.type "configmap" }}
+            - mountPath: {{ .Values.server.config.path }}/access-control
+              name: access-control-volume
+            {{- end }}{{- end }}
+            {{- if .Values.accessControl }}{{- if eq .Values.accessControl.type "pvc" }}
+            - mountPath: {{ .Values.server.config.path }}/access-control
+              name: {{ .Values.accessControl.pvcVolumeName | default "access-control-pvc-volume" }}
+            {{- end }}{{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
