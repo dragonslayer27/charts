@@ -14,6 +14,7 @@ The following table lists the configurable parameters of the Trino chart and the
 | `image.repository` |  | `"trinodb/trino"` |
 | `image.pullPolicy` |  | `"IfNotPresent"` |
 | `image.tag` |  | `"latest"` |
+| `imagePullSecrets` |  | `[{"name": "registry-credentials"}]` |
 | `server.workers` |  | `2` |
 | `server.node.environment` |  | `"production"` |
 | `server.node.dataDir` |  | `"/data/trino"` |
@@ -24,6 +25,7 @@ The following table lists the configurable parameters of the Trino chart and the
 | `server.config.https.enabled` |  | `false` |
 | `server.config.https.port` |  | `8443` |
 | `server.config.https.keystore.path` |  | `""` |
+| `server.config.authenticationType` |  | `""` |
 | `server.config.query.maxMemory` |  | `"4GB"` |
 | `server.config.query.maxMemoryPerNode` |  | `"1GB"` |
 | `server.config.memory.heapHeadroomPerNode` |  | `"1GB"` |
@@ -31,17 +33,14 @@ The following table lists the configurable parameters of the Trino chart and the
 | `server.exchangeManager.baseDir` |  | `"/tmp/trino-local-file-system-exchange-manager"` |
 | `server.workerExtraConfig` |  | `""` |
 | `server.coordinatorExtraConfig` |  | `""` |
-| `server.jvm.maxHeapSize` |  | `"8G"` |
-| `server.jvm.gcMethod.type` |  | `"UseG1GC"` |
-| `server.jvm.gcMethod.g1.heapRegionSize` |  | `"32M"` |
 | `server.autoscaling.enabled` |  | `false` |
 | `server.autoscaling.maxReplicas` |  | `5` |
 | `server.autoscaling.targetCPUUtilizationPercentage` |  | `50` |
 | `additionalNodeProperties` |  | `{}` |
-| `additionalJVMConfig` |  | `{}` |
 | `additionalConfigProperties` |  | `{}` |
 | `additionalLogProperties` |  | `{}` |
 | `additionalExchangeManagerProperties` |  | `{}` |
+| `eventListenerProperties` |  | `{}` |
 | `additionalCatalogs` |  | `{}` |
 | `env` |  | `[]` |
 | `initContainers` |  | `{}` |
@@ -49,14 +48,24 @@ The following table lists the configurable parameters of the Trino chart and the
 | `securityContext.runAsGroup` |  | `1000` |
 | `service.type` |  | `"ClusterIP"` |
 | `service.port` |  | `8080` |
-| `resources` |  | `{}` |
 | `nodeSelector` |  | `{}` |
 | `tolerations` |  | `[]` |
 | `affinity` |  | `{}` |
+| `auth` |  | `{}` |
 | `serviceAccount.create` |  | `false` |
 | `serviceAccount.name` |  | `""` |
 | `serviceAccount.annotations` |  | `{}` |
 | `secretMounts` |  | `[]` |
+| `coordinator.jvm.maxHeapSize` |  | `"8G"` |
+| `coordinator.jvm.gcMethod.type` |  | `"UseG1GC"` |
+| `coordinator.jvm.gcMethod.g1.heapRegionSize` |  | `"32M"` |
+| `coordinator.additionalJVMConfig` |  | `{}` |
+| `coordinator.resources` |  | `{}` |
+| `worker.jvm.maxHeapSize` |  | `"8G"` |
+| `worker.jvm.gcMethod.type` |  | `"UseG1GC"` |
+| `worker.jvm.gcMethod.g1.heapRegionSize` |  | `"32M"` |
+| `worker.additionalJVMConfig` |  | `{}` |
+| `worker.resources` |  | `{}` |
 
 
 
